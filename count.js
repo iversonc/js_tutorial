@@ -13,8 +13,6 @@ But bears it out even to the edge of doom.
 let uniques = {};
 let words =  sonnet.match(/\w+'?\w*/g);  // matches one or more word characters but not punctuation or whitespace
 
-console.log(words);
-
 for (let i = 0; i < words.length; ++i) {
   let word = words[i];
   if (uniques[word]) {
