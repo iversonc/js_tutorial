@@ -34,3 +34,45 @@ function functionalUrlsHTTPS(elements) {
 }
 
 console.log(functionalUrlsHTTPS(states));
+
+console.log("----------------");
+
+// singles: imperative version
+function imperativeSingles(items) {
+  let singles = [];
+  items.forEach(function (item) {
+    if (item.split(/\s+/).length === 1) {
+      singles.push(item);
+    }
+  });
+  return singles;
+}
+
+console.log(imperativeSingles(states));
+
+console.log("----------------");
+
+// singles: functional version
+function functionalSingles(elements) {
+  return elements.filter(element => element.split(/\s+/).length === 1);
+}
+
+console.log(functionalSingles(states));
+
+console.log("----------------");
+
+function filterDakota(elements) {
+  return elements.filter(element => element.includes("Dakota"));
+}
+
+console.log(filterDakota(states));
+
+console.log("----------------");
+
+function filterLength(elements) {
+  return elements.filter(element => element.split(/\s+/).length === 2);
+}
+
+console.log(filterLength(states));
+
+console.log("----------------");
