@@ -1,16 +1,19 @@
-// revereses a string
-function reverse(string) {
-  return Array.from(string).reverse().join("");
+// Adds `reverse` to all strings.
+String.prototype.reverse = function() {
+  return Array.from(this).reverse().join("");
 }
 
-// returns true for a palindrome, false otherewide
-function palindrome(string) {
-  let processedContent = string.toLowerCase();
-  return processedContent === reverse(processedContent);
-}
+// Defines a Phrase object.
+function Phrase(content) {
+  this.content = content;
 
-// returns an array of username and domain from a standard email address
-function emailParts(email) {
-  let processedEmail = email.toLowerCase();
-  return processedEmail.split('@');
+  // Returns content processed for palindrome testing.
+  this.processedContent = function processedContent() {
+    return this.content.toLowerCase();
+  }
+
+  // Returns true if the phrase is a palindrome, false otherwise.
+  this.palindrome = function palindrome() {
+    return this.processedContent() === this.processedContent().reverse();
+  } 
 }
