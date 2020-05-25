@@ -24,7 +24,7 @@ function functionalUrls(elements) {
 console.log(functionalUrls(states));
 console.log("----------------");
 
-// urls: Functional version
+// https: Functional version
 function functionalUrlsHTTPS(elements) {
   return elements.map(element => `https://example.com/${urlify(element)}`);
 }
